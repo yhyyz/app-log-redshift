@@ -51,8 +51,8 @@ export s3_location=s3://panchao-data/tmp/log
 # 代码中的emr_ec2中log_redshift.py和conf的log-job-ec2.properties
 rm -rf log_redshift*.py 
 rm -rf log-job-ec2*.properties
-wget https://github.com/yhyyz/app-log-redshift/blob/main/emr_ec2/log_redshift.py
-wget https://github.com/yhyyz/app-log-redshift/blob/main/config/log-job-ec2.properties
+wget https://raw.githubusercontent.com/yhyyz/app-log-redshift/main/emr_ec2/log_redshift.py
+wget https://raw.githubusercontent.com/yhyyz/app-log-redshift/main/config/log-job-ec2.properties
 aws s3 cp log_redshift.py  ${s3_location}/
 aws s3 cp log-job-ec2.properties  ${s3_location}/
 
