@@ -107,7 +107,7 @@ class LOGRedshiftSink:
         view_name = "kafka_source_" + target_table
         scf.createOrReplaceGlobalTempView(view_name)
 
-        df = self.spark.sql("select * from {view_name}".format(view_name=view_name))
+        df = self.spark.sql("select * from {view_name}".format(view_name="global_temp." + view_name))
         df_outer_field_dict = {}
         df_prop_field_dict = {}
         outer_column_list = []
@@ -151,7 +151,7 @@ class LOGRedshiftSink:
             prop_column_list.append(filed_sql_col)
         select_column_sql = ",".join(outer_column_list+prop_column_list)
         self.logger("gen columns from metadata: {}".format(select_column_sql))
-        df = self.spark.sql("select {column_list} from {view_name}".format(column_list=select_column_sql, view_name=view_name))
+        df = self.spark.sql("select {column_list} from {view_name}".format(column_list=select_column_sql, view_name="global_temp." + view_name))
         self.logger("event dataframe spark write to s3 {0}".format(self._getDFExampleString(df)))
         df.write \
             .format("io.github.spark_redshift_community.spark.redshift") \
