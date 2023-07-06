@@ -5,6 +5,7 @@
 # python lib 
 export s3_location=s3://panchao-data/tmp/log
 deactivate
+mkdir app_log && cd app_log
 rm -rf ./log_venv
 rm -rf ./log_util_*.whl
 rm -rf ./log_venv.tar.gz
