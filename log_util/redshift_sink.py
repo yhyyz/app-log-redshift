@@ -14,7 +14,7 @@ import re
 
 def gen_filter_udf(event_name):
     def filter_table(str_json, ):
-        event = '"event_name":"{0}"'.format(event_name)
+        event = '"event":"{0}"'.format(event_name)
         event_pattern = re.compile(event)
         event_res = event_pattern.findall(str_json)
         if event_res:
