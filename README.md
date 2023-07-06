@@ -74,7 +74,7 @@ ${s3_location}/log_redshift.py us-east-1 ${s3_location}/log-job-ec2.properties
 
 
 # client mode
-export s3_location=s3://panchao-data/tmp
+export s3_location=s3://panchao-data/tmp/log
 spark-submit --master yarn --deploy-mode client \
 --num-executors 5 \
 --conf "spark.yarn.dist.archives=${s3_location}/log_venv.tar.gz#log_venv" \
