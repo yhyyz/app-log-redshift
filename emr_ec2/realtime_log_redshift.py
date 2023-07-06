@@ -69,7 +69,6 @@ tempformat_p = params.get("tempformat")
 if tempformat_p:
     tempformat = tempformat_p.data
 
-sync_table_list = json.loads(params["sync_table_list"].data)
 redshift_secret_id = params["redshift_secret_id"].data
 redshift_host = params["redshift_host"].data
 redshift_port = int(params["redshift_port"].data)
