@@ -12,7 +12,7 @@ rm -rf ./log_venv.tar.gz
 python3 -m venv log_venv
 source log_venv/bin/activate
 pip3 install --upgrade pip
-pip3 install redshift_connector jproperties pandas  sqlalchemy pymysql
+pip3 install redshift_connector jproperties pandas  sqlalchemy==1.4.46 pymysql
 # log_util是封装好的Spark Redshift的包，源代码在log_util中
 wget https://dxs9dnjebzm6y.cloudfront.net/tmp/log_util_202307061304-1.0-py3-none-any.whl
 
